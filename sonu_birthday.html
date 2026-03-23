@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday Anurag 🎉</title>
+
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-top: 15%;
+            animation: glow 2s infinite alternate;
+        }
+
+        p {
+            font-size: 22px;
+            margin: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: #ff416c;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px white; }
+            to { text-shadow: 0 0 30px yellow; }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: white;
+            top: 0;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🎂 Happy 24th Birthday Anurag 🎉</h1>
+
+<p>
+Hey Sonu ❤️<br><br>
+
+Born on <b>24 March 2002</b> 🌟<br>
+Today you complete <b>24 amazing years</b> 🔥<br><br>
+
+This is not just your birthday…  
+This is your **LEVEL UP moment** 🚀<br><br>
+
+May success chase you 💼  
+May happiness stay forever 😊  
+May you achieve everything you dream 💫<br><br>
+
+You are not just a friend…  
+You are a **legend in making** 💯🔥
+</p>
+
+<button onclick="surprise()">Click for Surprise 🎁</button>
+
+<script>
+
+// Surprise message
+function surprise() {
+    document.body.innerHTML = `
+        <h1>🔥 LEGEND MODE ACTIVATED 🔥</h1>
+        <p>
+        Sonu… this year is yours 💯<br><br>
+        No limits ❌  
+        No fear ❌  
+        Only success 🚀🔥<br><br>
+
+        Happy Birthday once again ❤️🎂
+        </p>
+    `;
+    createConfetti();
+}
+
+// Confetti effect
+function createConfetti() {
+    for (let i = 0; i < 100; i++) {
+        let confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.width = Math.random() * 8 + 4 + "px";
+        confetti.style.height = Math.random() * 8 + 4 + "px";
+        document.body.appendChild(confetti);
+        
+        // Remove confetti after animation ends
+        setTimeout(() => {
+            confetti.remove();
+        }, 5000);
+    }
+}
+
+// Create confetti on page load
+window.onload = function() {
+    createConfetti();
+}
+
+</script>
+
+</body>
+</html>
